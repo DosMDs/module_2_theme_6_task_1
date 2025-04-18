@@ -13,7 +13,7 @@ export const fetchData = async (props) => {
 	}
 
 	if (method === "GET") {
-		url += `?_sort=title&_order=${props.order}`;
+		url += props.order ? `?_sort=title&_order=${props.order}` : "";
 
 		const searchParams = Object.keys(search)
 			.map((field) => {

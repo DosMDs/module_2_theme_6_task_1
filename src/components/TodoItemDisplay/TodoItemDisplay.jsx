@@ -1,18 +1,9 @@
-import { useDeleteTodo, useUpdateTodo } from "../../hooks";
-import { IconButton } from "../IconButton/IconButton";
-import editIcon from "../../assets/edit.svg";
-import deleteIcon from "../../assets/delete.svg";
+import { Link } from "react-router-dom";
+import { useUpdateTodo } from "../../hooks";
 import styles from "./TodoItemDisplay.module.css";
 
-export const TodoItemDisplay = ({
-	id,
-	title,
-	completed,
-	refreshTodosList,
-	setIsEdit,
-}) => {
+export const TodoItemDisplay = ({ id, title, completed, refreshTodosList }) => {
 	const { isUpdating, updateTodo } = useUpdateTodo(refreshTodosList);
-	const { isDeleting, deleteTodo } = useDeleteTodo(refreshTodosList);
 
 	const handleCheckboxUpdate = (id) => {
 		const body = { completed: !completed, title };
@@ -28,18 +19,9 @@ export const TodoItemDisplay = ({
 				disabled={isUpdating}
 				onChange={() => handleCheckboxUpdate(id)}
 			/>
-			<span className={styles.title}>{title}</span>
-			<IconButton
-				src={editIcon}
-				alt="Изменить"
-				handleOnClick={() => setIsEdit(true)}
-			/>
-			<IconButton
-				src={deleteIcon}
-				alt="Удалить"
-				disabled={isDeleting}
-				handleOnClick={() => deleteTodo(id)}
-			/>
+			<Link to={`/todos/${id}`}>
+				<span className={styles.title}>{title}</span>
+			</Link>
 		</>
 	);
 };
