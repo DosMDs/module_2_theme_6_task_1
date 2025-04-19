@@ -19,7 +19,7 @@ export const TodoItemDisplay = ({ id, title, completed, refreshTodosList }) => {
 				disabled={isUpdating}
 				onChange={() => handleCheckboxUpdate(id)}
 			/>
-			<Link to={`/todos/${id}`}>
+			<Link to={`/task/${id}`}>
 				<span className={styles.title}>{title}</span>
 			</Link>
 		</>

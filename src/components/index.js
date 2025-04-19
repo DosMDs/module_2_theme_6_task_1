@@ -3,4 +3,4 @@ export * from "./TodoList/TodoList";
 export * from "./TodoForm/TodoForm";
 export * from "./IconButton/IconButton";
 export * from "./TodoItemDisplay/TodoItemDisplay";
-export * from "./Pages/Todo/Todo";
+export * from "./Pages/Task/Task";

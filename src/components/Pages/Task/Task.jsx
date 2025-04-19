@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
-import { useGetTodo } from "../../../hooks";
+import { useGetTask } from "../../../hooks";
 import { useState } from "react";
 
-export const Todo = () => {
+export const Task = () => {
 	const { id } = useParams();
 	const [error, setError] = useState(null);
-	const [todo, isLoading] = useGetTodo(id, setError);
+	const [todo, isLoading] = useGetTask(id, setError);
 
 	console.log(todo);
 
