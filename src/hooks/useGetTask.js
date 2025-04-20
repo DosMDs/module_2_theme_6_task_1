@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { fetchData } from "../utils";
 
-export const useGetTask = (id, setError) => {
-	const [task, setTask] = useState([]);
+export const useGetTask = (id, setError, refreshTaskFlag) => {
+	const [task, setTask] = useState(null);
 	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
@@ -16,7 +16,7 @@ export const useGetTask = (id, setError) => {
 				setError(result.error);
 			})
 			.finally(setIsLoading(false));
-	}, [setError, id]);
+	}, [setError, id, refreshTaskFlag]);
 
 	return { task, isLoading };
 };

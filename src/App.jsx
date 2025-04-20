@@ -26,7 +26,7 @@ function App() {
 	);
 
 	return (
-		<div className={styles.todoContainer}>
+		<div>
 			<TodoForm
 				setTitleToSearch={setTitleToSearch}
 				refreshTodosList={refreshTodosList}

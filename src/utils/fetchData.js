@@ -33,8 +33,10 @@ export const fetchData = async (props) => {
 
 	try {
 		const response = await fetch(url, params);
-		const data = await response.json();
-		result.data = data;
+		if (response.status === 200) {
+			const data = await response.json();
+			result.data = data;
+		}
 	} catch (error) {
 		result.error = error.message;
 	}

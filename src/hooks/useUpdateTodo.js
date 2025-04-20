@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { fetchData } from "../utils";
 
-export const useUpdateTodo = (refreshTodosList) => {
+export const useUpdateTodo = (handleRefresh) => {
 	const [isUpdating, setIsUpdating] = useState(false);
 
 	const updateTodo = (id, body) => {
@@ -9,7 +9,7 @@ export const useUpdateTodo = (refreshTodosList) => {
 
 		fetchData({ method: "PUT", id, body })
 			.then((result) => {
-				refreshTodosList(result);
+				handleRefresh(result);
 			})
 			.finally(setIsUpdating(false));
 	};

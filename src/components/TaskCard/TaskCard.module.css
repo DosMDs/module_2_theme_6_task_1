@@ -1,0 +1,53 @@
+.title {
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin-bottom: 16px;
+	word-wrap: break-word;
+}
+
+.actions {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.checkboxLabel {
+	font-size: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.deleteButton {
+	background-color: #e74c3c;
+	color: #fff;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 6px;
+	font-size: 0.9rem;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.deleteButton:hover {
+	background-color: #c0392b;
+}
+
+.editButton {
+	background-color: #3498db;
+	color: #fff;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 6px;
+	font-size: 0.9rem;
+	cursor: pointer;
+}
+
+.editButton:hover {
+	background-color: #2980b9;
+}
+
+.actionButtons {
+	display: flex;
+	gap: 10px;
+}
