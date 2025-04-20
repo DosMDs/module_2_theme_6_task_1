@@ -11,7 +11,7 @@ export const TodoItemDisplay = ({ id, title, completed, refreshTodosList }) => {
 	};
 
 	return (
-		<>
+		<div className={styles.todoItem}>
 			<input
 				type="checkbox"
 				checked={completed}
@@ -19,9 +19,9 @@ export const TodoItemDisplay = ({ id, title, completed, refreshTodosList }) => {
 				disabled={isUpdating}
 				onChange={() => handleCheckboxUpdate(id)}
 			/>
-			<Link to={`/task/${id}`}>
+			<Link to={`/task/${id}`} className={styles.titleWrapper}>
 				<span className={styles.title}>{title}</span>
 			</Link>
-		</>
+		</div>
 	);
 };

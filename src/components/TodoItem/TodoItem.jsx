@@ -9,7 +9,7 @@ export const TodoItem = (props) => {
 	return (
 		<li
 			className={`${styles.todoItem} ${
-				props.completed && !isEdit ? styles.completed : ""
+				props.completed ? styles.completed : ""
 			}`}
 		>
 			<TodoItemDisplay {...componentProps} />
